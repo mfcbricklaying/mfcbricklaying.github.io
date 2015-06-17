@@ -1,0 +1,23 @@
+<nav class="navbar navbar-default" role="navigation">
+   <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse"
+         data-target="#navbar-colapse">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+      </button>
+   </div>
+   <div class="collapse navbar-collapse" id="navbar-colapse">
+      <ul class="nav navbar-nav">
+         {% assign pages = site.pages | sort:"weight" %}
+         {% for p in pages %}
+           {% if p.enabled %}
+             {% if p.title_nav %}
+               <li {% if page.url == p.url %}class="active"{% endif %}><a class="page-link" href="{{ p.url | prepend: site.baseurl }}"><span class="glyphicon glyphicon-user"></span>{{ p.title_nav }}</a></li>
+             {% endif %}
+           {% endif %}
+         {% endfor %}
+      </ul>
+   </div>
+</nav>
