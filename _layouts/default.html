@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
   {% include head.html %}
-
   <body>
+    <div id="topSeperator"></div>
+    <div class="container-fluid">
+      <div class="row">
+        <div id="bannerContainer" class="img-responsive">
+          <div class="bannerLogo"></div>
+        </div>
 
-    {% include header.html %}
+        {% include navigation.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
+        <div class="page-content">
+          <div class="wrapper">
+            {{ content }}
+          </div>
+        </div>
+
+        {% include footer.html %}
+
       </div>
     </div>
-
-    {% include footer.html %}
-
   </body>
 
 </html>

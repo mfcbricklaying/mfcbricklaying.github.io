@@ -1,0 +1,48 @@
+#topSeperator {
+  //padding-top:40px;
+}
+
+.navbar-nav.nav-justified > li{
+    float:none;
+}
+
+#bannerContainer {
+  background-image:(url("/images/backBox.png"));
+  background-repeat:repeat-x;
+  width:100%;
+  height:220px;
+}
+
+.bannerLogo {
+  background-image:(url("/images/mfcLogo.png"));
+  background-repeat:no-repeat;
+  background-position: center;
+  width:100%;
+  height:100%;
+}
+
+#navContainer {
+  width:100%;
+  height:60px;
+  background-color:#fff;
+  border-top:1px solid #000;
+  border-bottom:1px solid #000;
+}
+
+@media (min-width: 992px){
+  .container{
+    max-width:100%;
+  }
+}
+
+@media (min-width: 768px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+}

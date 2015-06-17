@@ -1,14 +1,16 @@
 # Site settings
 title: MFC Bricklaying
-email: micah@mfcbricklaying.com.au
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://www.mfcbricklaying.com.au" # the base hostname & protocol for your site
+email: contact@mfcbricklaying.com.au
+contact_number: "0423458631"
+description: >
+  Copyright (C) 2015 - MFC Bricklaying
+baseurl: ""
+url: "http://localhost:4000"
 twitter_username: mfcbricklaying
-github_username:  mfcbricklaying
+facebook_username: MfcBricklaying
 
 # Build settings
 markdown: kramdown
+
+gems:
+  - jekyll-redirect-from
