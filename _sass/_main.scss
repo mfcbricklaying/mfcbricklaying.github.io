@@ -11,14 +11,32 @@
   background-repeat:repeat-x;
   width:100%;
   height:220px;
+  display:table;
+  padding:0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .bannerLogo {
-  background-image:(url("/images/mfcLogo.png"));
-  background-repeat:no-repeat;
-  background-position: center;
-  width:100%;
-  height:100%;
+  background-size: 100% auto;
+  max-width:460px;
+  max-height:160px;
+  margin-left: auto;
+  margin-right: auto;
+  display:table-cell;
+  vertical-align: middle;
+  padding-right: 0;
+  padding-left: 0;
+  float: none;
+  margin: 0 auto;
+  min-height: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 #navContainer {
