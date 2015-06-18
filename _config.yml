@@ -1,11 +1,11 @@
 # Site settings
 title: MFC Bricklaying
-email: contact@mfcbricklaying.com.au
+email: micah@mfcbricklaying.com.au
 contact_number: "0423458631"
 description: >
   Copyright (C) 2015 - MFC Bricklaying
 baseurl: ""
-url: "http://localhost:4000"
+url: "http://mfcbricklaying.github.io"
 twitter_username: mfcbricklaying
 facebook_username: MfcBricklaying
 
