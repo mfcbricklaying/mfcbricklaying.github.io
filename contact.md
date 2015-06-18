@@ -29,7 +29,7 @@ enabled: true
 </p><br />
 
 <h4>Request a Quote</h4>
-<p>Feel free to request a quote and we will get back to you as soon as possible.</p><br />
+<p>If you would prefer, you can request a quote by filling in the fields below and pressing 'Submit Request'.</p><br />
 
 <form action="//formspree.io/{{ site.email }}" method="POST">
   <div class="form-group">
