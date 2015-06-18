@@ -7,7 +7,12 @@ weight: 3
 enabled: true
 ---
 
-<div class="row">
+<p>Below are some photos of prior work completed by MFC Bricklaying.
+To view a photo, simply click on it and a larger version will be displayed.<br /><br />
+You can use the arrow keys to navigate through the photos, or swipe left/right on a mobile device.
+</p><br />
+
+<div class="row center-block">
 			<div id="try"></div>
 			<ul id="box-container">
         {% assign photo_base_url = site.photos_base_url %}
