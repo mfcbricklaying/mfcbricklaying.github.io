@@ -9,7 +9,12 @@ url: "http://mfcbricklaying.github.io"
 twitter_username: mfcbricklaying
 facebook_username: MfcBricklaying
 
-photos_base_url: https://raw.githubusercontent.com/mfcbricklaying/web-assets/master/photos
+photos:
+  base_url: https://raw.githubusercontent.com/mfcbricklaying/web-assets/master/photos
+  desktop:
+    col_style: col-md-4
+  mobile:
+    col_style: col-xs-6
 
 # Build settings
 markdown: kramdown
