@@ -2,26 +2,27 @@
 <html lang="en">
   {% include head.html %}
   <body>
-    <div id="topSeperator"></div>
-    <div class="container-fluid">
-      <div class="row">
-        <div id="bannerContainer">
-          <div class="bannerLogo center-block">
-            <img src="/images/mfcLogo.png" class="img-responsive"></img>
+    <div id="mainContainer">
+      <div id="topSeperator"></div>
+      <div class="container-fluid footer-bot-padding">
+        <div class="row">
+          <div id="bannerContainer">
+            <div class="bannerLogo center-block">
+              <img src="/images/mfcLogo.png" class="img-responsive"></img>
+            </div>
+          </div>
+
+          {% include navigation.html %}
+
+          <div class="page-content">
+            <div class="wrapper">
+              {{ content }}
+            </div>
           </div>
         </div>
-
-        {% include navigation.html %}
-
-        <div class="page-content">
-          <div class="wrapper">
-            {{ content }}
-          </div>
-        </div>
-
-        {% include footer.html %}
-
       </div>
+
+      {% include footer.html %}
     </div>
   </body>
 
