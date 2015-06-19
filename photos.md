@@ -15,9 +15,9 @@ You can use the arrow keys to navigate through the photos, or swipe left/right o
 <div class="row center-block">
 			<div id="try"></div>
 			<ul id="box-container">
-        {% assign photo_base_url = site.photos_base_url %}
+        {% assign photo_base_url = site.photos.base_url %}
         {% for photo in site.data.photos %}
-        <div class="col-xs-6 col-md-4">
+        <div class="{{ site.photos.mobile.col_style }} {{ site.photos.desktop.col_style }}">
           <li class="box">
             <a href="{{ photo_base_url }}/{{ photo.file_name }}" class="swipebox" title="{{ photo.title : photo.title ? photo.file_name }}">
               <img src="{{ photo_base_url }}/{{ photo.file_name }}" alt="{{ photo.file_name }}" class="img-responsive">
