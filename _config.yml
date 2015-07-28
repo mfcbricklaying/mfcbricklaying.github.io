@@ -16,6 +16,9 @@ photos:
   mobile:
     col_style: col-xs-6
 
+carousel:
+  interval: 3000
+
 # Build settings
 markdown: kramdown
 
