@@ -1,7 +1,4 @@
 source 'https://rubygems.org'
 
-gem 'jekyll-redirect-from'
-
-group :development do
-  gem 'jekyll'
-end
+gem 'html-proofer'
+gem 'jekyll'
