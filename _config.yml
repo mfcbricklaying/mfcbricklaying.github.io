@@ -21,3 +21,4 @@ carousel:
 
 # Build settings
 markdown: kramdown
+exclude: [vendor]
