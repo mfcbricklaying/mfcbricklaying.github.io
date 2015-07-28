@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+#
+# MFCBricklaying
+# https://github.com/mfcbricklaying/mfcbricklaying.github.io
+#
+
+set -e
+
+FILE_DATA_PHOTOS_PATH="./_data/photos.yml"
+FILE_PHOTO_ASSETS_PATH="./assets/photos/*.jpg"
+
+function __preflight() {
+  echo "[CI] -> Installing RubyGems dependencies..."
+  bundle install
+
+  echo "[CI] -> Building Jekyll static website..."
+  bundle exec jekyll build
+
+  echo "[CI] -> Validating static website HTML..."
+  bundle exec htmlproof ./_site --disable-external
+
+  echo "[CI] -> Preflight done!"
+}
+
+function __gallery() {
+  echo "[CI] -> Indexing gallery photos..."
+
+  PHOTOS_DATA="$(cat ${FILE_DATA_PHOTOS_PATH})"
+  CURRENT_PHOTOS_COUNT=$(wc -l ${FILE_DATA_PHOTOS_PATH} | awk '{print $1}')
+  if [[ -z $PHOTOS_DATA ]]; then
+    echo "[CI] -> Failed to read photos registry" && exit 1
+  fi
+
+  TOTAL_PHOTOS=0
+  for FILE in `ls -1 ${FILE_PHOTO_ASSETS_PATH}`; do
+    FILE_BASENAME=$(basename $FILE)
+
+    # Check for stringmatch of web asset
+    if ! [[ $PHOTOS_DATA =~ $FILE_BASENAME ]]; then
+      echo "[CI] -> New photo found (${FILE_BASENAME}). Adding to photos registry..."
+      echo "- file_name: ${FILE_BASENAME}" >> $FILE_DATA_PHOTOS_PATH
+      if [ $? -eq 0 ]; then
+        echo "[CI] -> Added photo \"${FILE_BASENAME}\" to photos registry!"
+      else
+        echo "[CI] -> Failed to add photo to photos registry" && exit 1
+      fi
+    fi
+
+    TOTAL_PHOTOS=$((TOTAL_PHOTOS+1))
+  done
+
+  NEW_PHOTOS_COUNT=$((TOTAL_PHOTOS-CURRENT_PHOTOS_COUNT))
+  if [ $NEW_PHOTOS_COUNT -gt 0 ]; then
+    echo "[CI] -> Added ${NEW_PHOTOS_COUNT} new photo(s)"
+  else
+    echo "[CI] -> There were no new photos to add "
+  fi
+}
+
+__preflight
+__gallery
+
+echo "[CI] -> Done" && exit 0
