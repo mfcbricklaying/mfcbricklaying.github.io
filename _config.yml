@@ -10,7 +10,7 @@ twitter_username: mfcbricklaying
 facebook_username: MfcBricklaying
 
 photos:
-  base_url: https://raw.githubusercontent.com/mfcbricklaying/web-assets/master/photos
+  base_url: https://raw.githubusercontent.com/mfcbricklaying/mfcbricklaying.github.io/master/assets/photos
   desktop:
     col_style: col-md-4
   mobile:
@@ -21,6 +21,4 @@ carousel:
 
 # Build settings
 markdown: kramdown
-
-gems:
-  - jekyll-redirect-from
+exclude: [vendor]
