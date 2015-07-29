@@ -18,7 +18,7 @@ git remote set-branches --add origin master
 git fetch
 git reset --hard
 git checkout master --force
-git merge --no-ff --no-edit "${$TRAVIS_COMMIT}"
+git merge --no-ff --no-edit "${TRAVIS_COMMIT}"
 
 git push origin master
 if [ $? -eq 0 ]; then
