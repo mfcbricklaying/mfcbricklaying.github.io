@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#
+# MFCBricklaying
+# https://github.com/mfcbricklaying/mfcbricklaying.github.io
+#
+
+set -e
+
+echo "[CI] -> Merging pull request..."
