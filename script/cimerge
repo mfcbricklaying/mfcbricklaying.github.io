@@ -6,4 +6,25 @@
 
 set -e
 
+GIT_USERNAME="MFCBricklayingCIBot"
+GIT_EMAIL="github+ci@mfcbricklaying.com.au"
+
+echo "[CI] -> Configuring Git options..."
+git config --global user.email "${GIT_EMAIL}"
+git config --global user.name "${GIT_USERNAME}"
+
 echo "[CI] -> Merging pull request..."
+git remote set-branches --add origin master
+git fetch
+git reset --hard
+git checkout master --force
+git merge --no-ff --no-edit "${$TRAVIS_COMMIT}"
+
+git push origin master
+if [ $? -eq 0 ]; then
+  echo "[CI] -> Successfully merged pull-request into master"
+else
+  echo "[CI] -> Failed to merge pull-request into master" && exit 1
+fi
+
+echo "[CI] -> Done" && exit 0
