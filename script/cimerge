@@ -8,10 +8,12 @@ set -e
 
 GIT_USERNAME="MFCBricklayingCIBot"
 GIT_EMAIL="github+ci@mfcbricklaying.com.au"
+GIT_URL="https://github.com/mfcbricklaying/mfcbricklaying.github.io.git"
 
 echo "[CI] -> Configuring Git options..."
 git config --global user.email "${GIT_EMAIL}"
 git config --global user.name "${GIT_USERNAME}"
+git remote set-url origin $GIT_URL
 
 echo "[CI] -> Merging pull request..."
 git remote set-branches --add origin master
